@@ -1,0 +1,20 @@
+{
+  "name": "moniepoint-hackathon",
+  "version": "1.0.0",
+  "description": "This is a repo for a moniepoint hackathon",
+  "main": "solution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node solution.js",
+    "dev": "nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

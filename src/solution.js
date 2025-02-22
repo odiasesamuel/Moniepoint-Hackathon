@@ -62,4 +62,4 @@ const highestHourByAvgTransactionVolume = Object.entries(hourlyTransactionCount)
 // console.log("Highest sales value in a day:", highestSalesValueDay);
 // console.log('Most sold product ID by volume:', mostSoldProduct);
 // console.log('Highest sales staff ID for each month:', highestSalesStaffPerMonth);
-console.log('Highest hour of the day by average transaction volume:', highestHourByAvgTransactionVolume);
+// console.log('Highest hour of the day by average transaction volume:', highestHourByAvgTransactionVolume);

@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# TypeScript
+dist/
+build/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+
+# Editor and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+*.bak
+
+# Coverage reports
+coverage/
+
+# Test Output
+*.test-results
+jest-test-results.json
+results.xml
+
+# Optional Dependency Managers
+package-lock.json
+yarn.lock
+.pnpm-debug.log
+
+# Miscellaneous
+*.pid
+*.seed
+*.log.*.gz
