@@ -40,7 +40,9 @@ function processTransactionFile(filePath) {
     monthlyTopStaff[month] = monthlyTopStaff[month] || {};
     monthlyTopStaff[month][staffId] = (monthlyTopStaff[month][staffId] || 0) + parseFloat(amount);
 
-    console.log(monthlyTopStaff);
+    // Update hourly transaction volume
+    hourlyTransactionCount[hour] = (hourlyTransactionCount[hour] || []).concat(transactionVolume);
+    console.log(hourlyTransactionCount);
   });
 }
 
