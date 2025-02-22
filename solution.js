@@ -23,9 +23,10 @@ function processTransactionFile(filePath) {
     // Update daily sales volume
     const transactionVolume = products.match(/:\d+/g).reduce((sum, p) => sum + parseInt(p.slice(1)), 0);
     dailySalesVolume[date] = (dailySalesVolume[date] || 0) + transactionVolume;
-    // console.log(transactionVolume);
 
-    console.log(dailySalesVolume);
+    // Update daily sales value
+    dailySalesValue[date] = (dailySalesValue[date] || 0) + parseFloat(amount);
+    console.log(dailySalesValue)
   });
 }
 
