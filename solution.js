@@ -36,7 +36,11 @@ function processTransactionFile(filePath) {
         productSales[productId] = (productSales[productId] || 0) + parseInt(quantity);
       });
 
-    console.log(productSales);
+    // Update highest sales staff per month
+    monthlyTopStaff[month] = monthlyTopStaff[month] || {};
+    monthlyTopStaff[month][staffId] = (monthlyTopStaff[month][staffId] || 0) + parseFloat(amount);
+
+    console.log(monthlyTopStaff);
   });
 }
 
