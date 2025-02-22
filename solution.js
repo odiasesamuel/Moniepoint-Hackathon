@@ -19,6 +19,13 @@ function processTransactionFile(filePath) {
     const hour = time.split("T")[1].slice(0, 2);
     const month = date.slice(0, 7); // YYYY-MM
     console.log(staffId, time, products, amount);
+
+    // Update daily sales volume
+    const transactionVolume = products.match(/:\d+/g).reduce((sum, p) => sum + parseInt(p.slice(1)), 0);
+    dailySalesVolume[date] = (dailySalesVolume[date] || 0) + transactionVolume;
+    // console.log(transactionVolume);
+
+    console.log(dailySalesVolume);
   });
 }
 
