@@ -54,8 +54,12 @@ const highestSalesVolumeDay = Object.entries(dailySalesVolume).reduce((a, b) => 
 const highestSalesValueDay = Object.entries(dailySalesValue).reduce((a, b) => (b[1] > a[1] ? b : a));
 const mostSoldProduct = Object.entries(productSales).reduce((a, b) => (b[1] > a[1] ? b : a));
 const highestSalesStaffPerMonth = Object.fromEntries(Object.entries(monthlyTopStaff).map(([month, sales]) => [month, Object.entries(sales).reduce((a, b) => (b[1] > a[1] ? b : a))[0]]));
+const highestHourByAvgTransactionVolume = Object.entries(hourlyTransactionCount)
+    .map(([hour, volumes]) => [hour, volumes.reduce((sum, v) => sum + v, 0) / volumes.length])
+    .reduce((a, b) => (b[1] > a[1] ? b : a))[0];
 
 // console.log("Highest sales volume in a day:", highestSalesVolumeDay);
 // console.log("Highest sales value in a day:", highestSalesValueDay);
 // console.log('Most sold product ID by volume:', mostSoldProduct);
-console.log('Highest sales staff ID for each month:', highestSalesStaffPerMonth);
+// console.log('Highest sales staff ID for each month:', highestSalesStaffPerMonth);
+console.log('Highest hour of the day by average transaction volume:', highestHourByAvgTransactionVolume);
