@@ -52,6 +52,8 @@ fs.readdirSync(transactionDir).forEach((file) => {
 // Calculate final metrics
 const highestSalesVolumeDay = Object.entries(dailySalesVolume).reduce((a, b) => (b[1] > a[1] ? b : a));
 const highestSalesValueDay = Object.entries(dailySalesValue).reduce((a, b) => (b[1] > a[1] ? b : a));
+const mostSoldProduct = Object.entries(productSales).reduce((a, b) => (b[1] > a[1] ? b : a));
 
 // console.log("Highest sales volume in a day:", highestSalesVolumeDay);
-console.log('Highest sales value in a day:', highestSalesValueDay);
+// console.log("Highest sales value in a day:", highestSalesValueDay);
+console.log('Most sold product ID by volume:', mostSoldProduct);
