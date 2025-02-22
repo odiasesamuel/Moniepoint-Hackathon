@@ -26,7 +26,17 @@ function processTransactionFile(filePath) {
 
     // Update daily sales value
     dailySalesValue[date] = (dailySalesValue[date] || 0) + parseFloat(amount);
-    console.log(dailySalesValue)
+
+    // Update product sales
+    products
+      .slice(1, -1)
+      .split("|")
+      .forEach((p) => {
+        const [productId, quantity] = p.split(":");
+        productSales[productId] = (productSales[productId] || 0) + parseInt(quantity);
+      });
+
+    console.log(productSales);
   });
 }
 
