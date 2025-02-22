@@ -18,7 +18,7 @@ function processTransactionFile(filePath) {
     const date = time.split("T")[0];
     const hour = time.split("T")[1].slice(0, 2);
     const month = date.slice(0, 7); // YYYY-MM
-    console.log(staffId, time, products, amount);
+    // console.log(staffId, time, products, amount);
 
     // Update daily sales volume
     const transactionVolume = products.match(/:\d+/g).reduce((sum, p) => sum + parseInt(p.slice(1)), 0);
@@ -42,10 +42,14 @@ function processTransactionFile(filePath) {
 
     // Update hourly transaction volume
     hourlyTransactionCount[hour] = (hourlyTransactionCount[hour] || []).concat(transactionVolume);
-    console.log(hourlyTransactionCount);
   });
 }
 
 fs.readdirSync(transactionDir).forEach((file) => {
   processTransactionFile(path.join(transactionDir, file));
 });
+
+// Calculate final metrics
+const highestSalesVolumeDay = Object.entries(dailySalesVolume).reduce((a, b) => (b[1] > a[1] ? b : a));
+
+console.log("Highest sales volume in a day:", highestSalesVolumeDay);
